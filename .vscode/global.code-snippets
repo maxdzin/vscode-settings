@@ -1,0 +1,195 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	"log": {
+	  "scope": "javascript,typescript",
+	  "prefix": "log",
+	  "body": ["console.log($1)"],
+	  "description": "Log output to console"
+	},
+	"import": {
+	  "scope": "javascript,typescript",
+	  "prefix": "im",
+	  "body": ["import { $1 } from '$2'"],
+	  "description": "Import the module"
+	},
+	"export-all": {
+	  "scope": "javascript,typescript",
+	  "prefix": "exa",
+	  "body": ["export * from '$1'"],
+	  "description": "Export all from the module"
+	},
+	"try-catch-finally": {
+	  "scope": "javascript,typescript",
+	  "prefix": "trycf",
+	  "body": [
+		"try {",
+		"\t$1",
+		"} catch (e) {",
+		"\t$2",
+		"} finally {",
+		"\t$3",
+		"}"
+	  ],
+	  "description": "Insert try > catch > finally code block"
+	},
+	"try-catch-promise": {
+	  "scope": "typescript",
+	  "prefix": "trycp",
+	  "body": [
+		"try {",
+		"\t${1:return Promise.resolve($2)}",
+		"} catch (e) {",
+		"\t${3:return Promise.reject(e)}",
+		"}"
+	  ],
+	  "description": "Insert try > catch code block with promise"
+	},
+	"async-method": {
+	  "scope": "javascript,typescript,vue",
+	  "prefix": "asmethod",
+	  "body": [
+		"const $1 = async (): Promise<void> => {",
+		"\ttry {",
+		"\t\t$2",
+		"\t} catch (e) {",
+		"\t\treturn Promise.reject(e)",
+		"\t}",
+		"}",
+	  ],
+	  "description": "Insert async method"
+	},
+	"async-delay": {
+	  "scope": "javascript,typescript,vue",
+	  "prefix": "asdelay",
+	  "body": ["await new Promise((resolve) => setTimeout(resolve, ${1:500}))"],
+	  "description": "Insert asynchronous Promise delay"
+	},
+	"async-delay-result": {
+	  "scope": "javascript,typescript,vue",
+	  "prefix": "asdelayres",
+	  "body": [
+		"await new Promise<void>((resolve) => setTimeout(resolve, ${1:500}))"
+	  ],
+	  "description": "Insert asynchronous Promise delay with result"
+	},
+	"vue-script-setup-ts": {
+	  "scope": "vue",
+	  "prefix": "<scst",
+	  "body": ["<script setup lang=\"ts\">", "\t$1", "</script>"],
+	  "description": "Inserts script setup typescript"
+	},
+	"vue-computed": {
+	  "scope": "typescript,vue",
+	  "prefix": "com",
+	  "body": ["const $1 => computed<$2>(() => $3)"],
+	  "description": "Vue typescript insert typed computed const."
+	},
+	"vue-base": {
+	  "scope": "vue",
+	  "prefix": "vbase",
+	  "body": [
+		"<script setup lang=\"ts\">",
+		"\t$1",
+		"</script>",
+		"",
+		"<template>",
+		"\t$2",
+		"</template>"
+	  ],
+	  "description": "Vue initialize base blocks."
+	},
+	"vue-setup-define-props": {
+	  "scope": "typescript,vue",
+	  "prefix": "props",
+	  "body": ["defineProps<{", "\t$1", "\t}>()"],
+	  "description": "Vue typescript setup define props."
+	},
+	"vue-setup-define-props-var": {
+	  "scope": "typescript,vue",
+	  "prefix": "propsc",
+	  "body": ["const props = defineProps<{", "\t$1", "\t}>()"],
+	  "description": "Vue typescript setup define props const."
+	},
+	"vue-setup-define-emits": {
+	  "scope": "typescript,vue",
+	  "prefix": "emit",
+	  "body": ["const emit = defineEmits(['$1'])"],
+	  "description": "Vue typescript define emits."
+	},
+	"vue-setup-define-emits-typed": {
+	  "scope": "typescript,vue",
+	  "prefix": "emitt",
+	  "body": [
+		"const emit = defineEmits<{",
+		"\t(e: '$1'): ${2:void}",
+		"}>()"
+	  ],
+	  "description": "Vue typescript define emits typed."
+	},
+	"vue-template": {
+	  "scope": "vue",
+	  "prefix": "template",
+	  "body": ["<template>", "\t$1", "</template>", ""],
+	  "description": "Vue template block."
+	},
+	"vue-style-scss": {
+	  "scope": "vue",
+	  "prefix": "<stylescss",
+	  "body": ["<style lang=\"scss\"${1: scoped}>", "\t$2", "</style>", ""],
+	  "description": "Vue style scss block."
+	},
+	"pinia-store-initialize": {
+	  "scope": "javascript,typescript",
+	  "prefix": "storepinia",
+	  "body": [
+		"import { defineStore } from 'pinia'",
+		"",
+		"export const use$1Store = defineStore({",
+		"\tid: '$1',",
+		"",
+		"\tstate: () => ({$3}),",
+		"",
+		"\tgetters: {$4},",
+		"",
+		"\tactions: {$5},",
+		"})"
+	  ],
+	  "description": "Initialize Pinia store."
+	},
+	"use-i18n-t": {
+	  "scope": "javascript,typescript,vue",
+	  "prefix": "uset",
+	  "body": "const { t } = useI18n()",
+	  "description": "Insert use of t from i18n."
+	},
+	"markdown-api-table": {
+	  "scope": "markdown",
+	  "prefix": "table",
+	  "body": [
+		"<table>",
+		"<tr>",
+		"<td width=\"400px\" valign=\"top\">",
+		"",
+		"### API",
+		"",
+		"Description",
+		"",
+		"</td>",
+		"<td width=\"600px\"><br>",
+		"",
+		"```ts",
+		"// code block",
+		"```",
+		"",
+		"</td>",
+		"</tr>",
+		"</table>",
+	  ],
+	}
+}
